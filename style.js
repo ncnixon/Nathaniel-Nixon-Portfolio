@@ -1,9 +1,12 @@
-// Core element references
+// 
 const navLinks = document.querySelectorAll('nav a[href^="#"]');
 const projectCards = document.querySelectorAll(".project-card");
 const resumeLinks = document.querySelectorAll(".resume-link");
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
 
-// Smooth in-page scrolling for nav links
+// 
 navLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
     const targetId = link.getAttribute("href");
@@ -14,11 +17,14 @@ navLinks.forEach((link) => {
     if (!targetElement) return;
 
     event.preventDefault();
-    targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    targetElement.scrollIntoView({
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+      block: "start",
+    });
   });
 });
 
-// Open resume links directly without any in-page navigation behavior
+// 
 resumeLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
@@ -43,14 +49,14 @@ resumeLinks.forEach((link) => {
   });
 });
 
-// Tap/click flip support for project cards (mobile + desktop)
+// 
 projectCards.forEach((card) => {
   card.addEventListener("click", () => {
     card.classList.toggle("is-flipped");
   });
 });
 
-// Close open cards when clicking outside
+// 
 document.addEventListener("click", (event) => {
   const clickedCard = event.target.closest(".project-card");
   if (clickedCard) return;
