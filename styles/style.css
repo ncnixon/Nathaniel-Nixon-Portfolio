@@ -336,4 +336,31 @@ footer {
     font-size: 0.95rem;
     line-height: 1.2;
   }
+
+  .hero {
+    background-position: center top;
+    padding: 5.5rem 1rem;
+    min-height: 58vh;
+  }
+
+  .hero .call-to-action {
+    max-width: 34rem;
+    padding: 1rem 1.1rem;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.28);
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .cta-button {
+    padding: 0.7rem 1.5rem;
+  }
 }
