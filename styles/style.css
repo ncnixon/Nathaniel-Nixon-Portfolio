@@ -124,7 +124,7 @@ section h2 {
   color: #000000;
 }
 
-.about-button {
+.resume-button {
   display: inline-block;
   margin-top: 1.5rem;
   background: #000000;
@@ -138,7 +138,7 @@ section h2 {
     box-shadow 0.3s;
 }
 
-.about-button:hover {
+.resume-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
