@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif, Geneva, Verdana;
+  line-height: 1.6;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(135deg, #7e7e7fe9 0%, #000000 100%);
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 52px;
+  width: auto;
+  display: block;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+nav a:hover {
+  opacity: 0.8;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("../images/heroimage.png") center / cover no-repeat;
+  color: white;
+  padding: 7rem 2rem;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: inline-block;
+  background: rgb(255, 255, 255);
+  color: #000000;
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+section {
+  padding: 4rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #000000;
+}
+
+.about-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background: #000000;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.about-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.skill-card {
+  background: #f5f5f5;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card h3 {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  color: rgb(54, 125, 161);
+  margin-bottom: 1rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  position: relative;
+  height: 320px;
+  perspective: 1000px;
+}
+
+.project-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+}
+
+.project-card:hover .project-card-inner {
+  transform: rotateY(180deg);
+}
+
+.project-card.is-flipped .project-card-inner {
+  transform: rotateY(180deg);
+}
+
+.project-face {
+  position: absolute;
+  inset: 0;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.project-front {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.project-back h3 {
+  color: rgb(54, 125, 161);
+  margin-bottom: 0.8rem;
+}
+
+.project-back p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.project-image-data-science {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
+    url("../images/datascience.png") center / cover no-repeat;
+}
+.project-image-kitchen {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
+    url("../images/hospitality.png") center top / 90% no-repeat;
+}
+.project-image-design {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
+    url("../images/html.png") center / cover no-repeat;
+}
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-content h3 {
+  color: rgb(54, 125, 161);
+  margin-bottom: 0.5rem;
+}
+
+.project-content p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.project-link {
+  color: rgb(54, 125, 161);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.project-link:hover {
+  color: #667eea;
+}
+
+.contact-section {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-item a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+}
