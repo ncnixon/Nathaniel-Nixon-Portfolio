@@ -1,6 +1,7 @@
 // Core element references
 const navLinks = document.querySelectorAll('nav a[href^="#"]');
 const projectCards = document.querySelectorAll(".project-card");
+const resumeLinks = document.querySelectorAll(".resume-link");
 
 // Smooth in-page scrolling for nav links
 navLinks.forEach((link) => {
@@ -14,6 +15,31 @@ navLinks.forEach((link) => {
 
     event.preventDefault();
     targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
+
+// Open resume links directly without any in-page navigation behavior
+resumeLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const resumeUrl = link.getAttribute("href");
+    if (!resumeUrl) return;
+
+    const shouldDownload = link.hasAttribute("download");
+
+    if (shouldDownload) {
+      const downloadLink = document.createElement("a");
+      downloadLink.href = resumeUrl;
+      downloadLink.download =
+        link.getAttribute("download") || "Resume-Portfolio.pdf";
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+      return;
+    }
+
+    window.open(resumeUrl, "_blank", "noopener,noreferrer");
   });
 });
 
