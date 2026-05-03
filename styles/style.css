@@ -238,23 +238,17 @@ section h2 {
 .project-image {
   width: 100%;
   height: 200px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #e9eef5;
 }
 
 .project-image-data-science {
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
-    url("../images/datascience.png") center / cover no-repeat;
+  background: url("../images/datascience.png") center / cover no-repeat;
 }
 .project-image-kitchen {
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
-    url("../images/hospitality.png") center top / 90% no-repeat;
+  background: url("../images/hospitality.png") center top / 90% no-repeat;
 }
 .project-image-design {
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
-    url("../images/html.png") center / cover no-repeat;
+  background: url("../images/html.png") center / cover no-repeat;
 }
 .project-content {
   padding: 1.5rem;
@@ -312,4 +306,34 @@ footer {
   text-align: center;
   padding: 2rem;
   margin-top: 2rem;
+}
+
+/* Mobile Styling */
+@media (max-width: 768px) {
+  header {
+    padding: 0.6rem 0;
+  }
+
+  .header {
+    padding: 0 1rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .logo img {
+    height: 36px;
+  }
+
+  nav ul {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.7rem 1rem;
+  }
+
+  nav a {
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
 }
